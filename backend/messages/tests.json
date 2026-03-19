@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "GET messages",
+      "method": "GET",
+      "path": "/?channel_id=general&sub_channel_id=announcements",
+      "expectedStatus": 200,
+      "expectedBody": {"messages": [{"id": 1}]},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST message",
+      "method": "POST",
+      "path": "/",
+      "body": {"channel_id": "general", "sub_channel_id": "announcements", "text": "Тест сообщение", "user_id": 1},
+      "expectedStatus": 200,
+      "expectedBody": {"message": {"text": "Тест сообщение"}},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

@@ -13,7 +13,6 @@ export default function Index() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showInviteModal, setShowInviteModal] = useState(false);
   const [showAccessModal, setShowAccessModal] = useState(false);
-  const [inputText, setInputText] = useState("");
   const [inviteLink] = useState("https://nexus.app/invite/Xk9pQ2a");
   const [copied, setCopied] = useState(false);
 
@@ -85,10 +84,10 @@ export default function Index() {
         />
 
         <ChatArea
+          channelId={activeChannel}
+          subChannelId={activeSubChannel}
           currentSubName={currentSub?.name}
           currentSubLocked={currentSub?.locked}
-          inputText={inputText}
-          onInputChange={setInputText}
           onOpenMenu={() => setMobileMenuOpen(true)}
           onInviteClick={() => setShowInviteModal(true)}
         />
